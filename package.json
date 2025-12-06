@@ -1,0 +1,20 @@
+{
+  "name": "maria-kniazeva-yoga",
+  "version": "1.0.0",
+  "description": "Professional website for Maria Kniazeva - Certified Yoga Trainer",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "yoga",
+    "wellness",
+    "hatha",
+    "vinyasa",
+    "cacao-ceremony",
+    "sound-healing"
+  ],
+  "author": "Maria Kniazeva",
+  "license": "MIT"
+}
+
