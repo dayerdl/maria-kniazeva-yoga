@@ -75,14 +75,149 @@ const observer = new IntersectionObserver((entries) => {
 // Observe all cards and sections for animation
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll(
-        '.service-card, .cert-card, .contact-item, .timeline-item'
+        '.service-card, .cert-card, .contact-item, .timeline-item, .gallery-item'
     );
     
-    animatedElements.forEach(el => {
+    animatedElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
         observer.observe(el);
     });
+    
+    // Create floating mystical elements
+    createFloatingElements();
+    
+    // Hide loader after page loads
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const loader = document.querySelector('.page-loader');
+            loader.classList.add('hidden');
+            document.body.classList.remove('loading');
+        }, 500);
+    });
+});
+
+// Create magical floating elements
+function createFloatingElements() {
+    const hero = document.querySelector('.hero');
+    const gallery = document.querySelector('.gallery');
+    
+    // Create stars
+    for (let i = 0; i < 20; i++) {
+        const star = document.createElement('div');
+        star.className = 'floating-element star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 6 + 's';
+        star.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        hero.appendChild(star);
+    }
+    
+    // Create moons
+    for (let i = 0; i < 3; i++) {
+        const moon = document.createElement('div');
+        moon.className = 'floating-element moon';
+        moon.style.left = Math.random() * 100 + '%';
+        moon.style.top = Math.random() * 100 + '%';
+        moon.style.animationDelay = Math.random() * 8 + 's';
+        hero.appendChild(moon);
+    }
+}
+
+// Parallax effect for hero and scroll effects
+let lastScrollY = 0;
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    
+    // Hero parallax
+    if (hero && scrolled < window.innerHeight) {
+        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+        heroContent.style.opacity = 1 - (scrolled / window.innerHeight);
+        
+        // Hide scroll indicator when scrolling
+        if (scrollIndicator) {
+            scrollIndicator.style.opacity = 1 - (scrolled / 300);
+        }
+    }
+    
+    // Add scroll direction class
+    if (scrolled > lastScrollY) {
+        document.body.classList.add('scrolling-down');
+        document.body.classList.remove('scrolling-up');
+    } else {
+        document.body.classList.add('scrolling-up');
+        document.body.classList.remove('scrolling-down');
+    }
+    lastScrollY = scrolled;
+});
+
+// Add cursor trail effect
+let cursorTrail = [];
+const maxTrailLength = 20;
+
+document.addEventListener('mousemove', (e) => {
+    if (window.innerWidth > 768) { // Only on desktop
+        const trail = document.createElement('div');
+        trail.className = 'cursor-trail';
+        trail.style.left = e.pageX + 'px';
+        trail.style.top = e.pageY + 'px';
+        document.body.appendChild(trail);
+        
+        cursorTrail.push(trail);
+        
+        setTimeout(() => {
+            trail.remove();
+            cursorTrail.shift();
+        }, 1000);
+        
+        if (cursorTrail.length > maxTrailLength) {
+            const oldest = cursorTrail.shift();
+            oldest.remove();
+        }
+    }
+});
+
+// Lightbox functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            const overlay = item.querySelector('.gallery-overlay h3');
+            
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.textContent = overlay ? overlay.textContent : '';
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 });
 

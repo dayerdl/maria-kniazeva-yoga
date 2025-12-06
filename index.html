@@ -10,7 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="loading">
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading Magic...</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -19,6 +27,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -38,6 +47,7 @@
             <p class="hero-description">Hatha • Vinyasa • Cacao Ceremonies • Sound Healing</p>
             <a href="#contact" class="cta-button">Book a Session</a>
         </div>
+        <div class="scroll-indicator"></div>
         <div class="hero-overlay"></div>
     </section>
 
@@ -85,6 +95,124 @@
                     <div class="service-icon">🔔</div>
                     <h3>Sound Healing</h3>
                     <p>Therapeutic sessions using sound vibrations to promote deep relaxation and healing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Journey Through Moments</h2>
+                <div class="divider"></div>
+                <p class="section-description">Experience the magic of mindful practice and sacred ceremonies</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/yoga-session-1.jpg" alt="Outdoor yoga meditation session">
+                    <div class="gallery-overlay">
+                        <h3>Sacred Practice</h3>
+                        <p>Finding peace in stillness</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/yoga-session-2.jpg" alt="Guided meditation practice">
+                    <div class="gallery-overlay">
+                        <h3>Inner Journey</h3>
+                        <p>Guided meditation and breathwork</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/cacao-ceremony-1.jpg" alt="Cacao ceremony ritual">
+                    <div class="gallery-overlay">
+                        <h3>Cacao Ceremony</h3>
+                        <p>Heart-opening sacred ritual</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/sound-healing-1.jpg" alt="Sound healing with singing bowls">
+                    <div class="gallery-overlay">
+                        <h3>Sound Healing</h3>
+                        <p>Vibrational therapy and relaxation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/cacao-ceremony-2.jpg" alt="Ceremonial cacao preparation">
+                    <div class="gallery-overlay">
+                        <h3>Sacred Cacao</h3>
+                        <p>Traditional preparation and intention</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ceremony-portrait.jpg" alt="Ceremonial practice">
+                    <div class="gallery-overlay">
+                        <h3>Ceremonial Practice</h3>
+                        <p>Connecting with ancient wisdom</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/group-session-1.jpg" alt="Group yoga and meditation">
+                    <div class="gallery-overlay">
+                        <h3>Community Circle</h3>
+                        <p>Shared energy and connection</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/cacao-ingredients.jpg" alt="Sacred cacao ingredients">
+                    <div class="gallery-overlay">
+                        <h3>Sacred Elements</h3>
+                        <p>Pure ceremonial cacao</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ceremony-setup.jpg" alt="Ceremony preparation">
+                    <div class="gallery-overlay">
+                        <h3>Sacred Space</h3>
+                        <p>Creating intentional atmosphere</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/sound-healing-2.jpg" alt="Sound healing ceremony">
+                    <div class="gallery-overlay">
+                        <h3>Healing Vibrations</h3>
+                        <p>Journey through sound</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/group-session-2.jpg" alt="Community gathering">
+                    <div class="gallery-overlay">
+                        <h3>Sacred Gathering</h3>
+                        <p>Unity in practice</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/yoga-studio.jpg" alt="Yoga studio space">
+                    <div class="gallery-overlay">
+                        <h3>Sacred Studio</h3>
+                        <p>A space for transformation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/certification.jpg" alt="Yoga certification">
+                    <div class="gallery-overlay">
+                        <h3>Certified Journey</h3>
+                        <p>Dedicated to the practice</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/outdoor-meditation.jpg" alt="Outdoor meditation">
+                    <div class="gallery-overlay">
+                        <h3>Nature's Embrace</h3>
+                        <p>Desert meditation practice</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/meditation-portrait.jpg" alt="Meditation practice">
+                    <div class="gallery-overlay">
+                        <h3>Mindful Presence</h3>
+                        <p>Embodying the practice</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,6 +310,15 @@
             </div>
         </div>
     </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightbox-close">&times;</span>
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
