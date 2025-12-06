@@ -219,5 +219,16 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
     }
+    
+    // Make entire contact card clickable
+    const contactItems = document.querySelectorAll('.contact-item');
+    contactItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            const link = item.querySelector('a');
+            if (link && e.target !== link) {
+                link.click();
+            }
+        });
+    });
 });
 
