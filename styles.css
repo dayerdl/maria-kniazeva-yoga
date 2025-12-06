@@ -733,11 +733,21 @@ section {
 .contact-details a {
     color: var(--text-light);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, var(--soft-lavender) 0%, var(--white) 100%);
+    border-radius: 25px;
+    margin-top: 0.5rem;
+    border: 2px solid transparent;
 }
 
 .contact-details a:hover {
     color: var(--primary-color);
+    background: linear-gradient(135deg, var(--tertiary-color) 0%, var(--soft-lavender) 100%);
+    border-color: var(--gold);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 /* Footer */
@@ -824,7 +834,9 @@ section {
 .gallery-item img {
     width: 100%;
     height: 350px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    background: linear-gradient(135deg, var(--deep-indigo) 0%, var(--mystic-purple) 100%);
     transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1133,6 +1145,7 @@ section {
 
     .gallery-item img {
         height: 300px;
+        object-fit: contain;
     }
 
     .cert-grid {
@@ -1173,6 +1186,7 @@ section {
 
     .gallery-item img {
         height: 250px;
+        object-fit: contain;
     }
 
     .service-card {
