@@ -699,6 +699,8 @@ section {
     background: radial-gradient(circle, rgba(199, 125, 255, 0.2) 0%, transparent 70%);
     opacity: 0;
     transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .contact-item:hover::before {
@@ -716,7 +718,7 @@ section {
     filter: drop-shadow(0 4px 8px rgba(123, 44, 191, 0.3));
     transition: all 0.5s ease;
     position: relative;
-    z-index: 1;
+    z-index: 5;
 }
 
 .contact-item:hover .contact-icon {
@@ -728,6 +730,8 @@ section {
     font-size: 1.1rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 5;
 }
 
 .contact-details a {
@@ -740,6 +744,9 @@ section {
     border-radius: 25px;
     margin-top: 0.5rem;
     border: 2px solid transparent;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .contact-details a:hover {
