@@ -361,12 +361,37 @@ section {
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(123, 44, 191, 0.3), 0 0 30px var(--glow);
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.05);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background: linear-gradient(135deg, var(--deep-indigo) 0%, var(--mystic-purple) 100%);
 }
 
 .about-text {
-    text-align: center;
+    text-align: left;
 }
 
 .about-text .lead {
@@ -1162,6 +1187,15 @@ section {
 
     .contact-info {
         grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-text {
+        text-align: center;
     }
 
     .experience-timeline::before {
