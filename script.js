@@ -72,8 +72,60 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// Language switching functionality
+let currentLang = localStorage.getItem('language') || 'en';
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    document.documentElement.lang = lang;
+    
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let translation = translations[lang];
+        
+        for (const k of keys) {
+            if (translation && translation[k]) {
+                translation = translation[k];
+            } else {
+                translation = null;
+                break;
+            }
+        }
+        
+        if (translation) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.value = translation;
+            } else {
+                element.textContent = translation;
+            }
+        }
+    });
+    
+    // Update active language button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+}
+
 // Observe all cards and sections for animation
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize language
+    setLanguage(currentLang);
+    
+    // Add click handlers to language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+    
     const animatedElements = document.querySelectorAll(
         '.service-card, .cert-card, .contact-item, .timeline-item, .gallery-item'
     );

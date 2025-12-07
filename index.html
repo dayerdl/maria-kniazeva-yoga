@@ -15,7 +15,7 @@
     <div class="page-loader">
         <div class="loader-content">
             <div class="loader-spinner"></div>
-            <div class="loader-text">Loading Magic...</div>
+            <div class="loader-text" data-i18n="loader.text">Loading Magic...</div>
         </div>
     </div>
 
@@ -24,13 +24,23 @@
         <div class="container">
             <div class="nav-brand">Maria Kniazeva</div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="en" title="English">
+                        <span class="flag-icon">🇬🇧</span>
+                    </button>
+                    <button class="lang-btn" data-lang="ru" title="Русский">
+                        <span class="flag-icon">🇷🇺</span>
+                    </button>
+                </div>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -43,9 +53,9 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Maria Kniazeva</h1>
-            <p class="hero-subtitle">Certified Yoga Trainer</p>
-            <p class="hero-description">Hatha • Vinyasa • Cacao Ceremonies • Sound Healing</p>
-            <a href="#contact" class="cta-button">Book a Session</a>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Certified Yoga Trainer</p>
+            <p class="hero-description" data-i18n="hero.description">Hatha • Vinyasa • Cacao Ceremonies • Sound Healing</p>
+            <a href="#contact" class="cta-button" data-i18n="hero.cta">Book a Session</a>
         </div>
         <div class="scroll-indicator"></div>
         <div class="hero-overlay"></div>
@@ -55,7 +65,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2>About Me</h2>
+                <h2 data-i18n="about.title">About Me</h2>
                 <div class="divider"></div>
             </div>
             <div class="about-content">
@@ -63,9 +73,9 @@
                     <img src="images/sound-healing-2.jpg" alt="Maria Kniazeva - Sound Healing Practice">
                 </div>
                 <div class="about-text">
-                    <p class="lead">Certified yoga trainer with 2+ years of experience in Hatha, Vinyasa, Cacao Ceremonies and Sound Healing.</p>
-                    <p>I am committed to enhancing well-being through tailored sessions that honor the unique journey of each individual. My approach combines traditional yoga practices with holistic healing modalities to create transformative experiences.</p>
-                    <p>Whether you're beginning your yoga journey or deepening your practice, I'm here to guide you with compassion, expertise, and dedication.</p>
+                    <p class="lead" data-i18n="about.lead">Certified yoga trainer with 2+ years of experience in Hatha, Vinyasa, Cacao Ceremonies and Sound Healing.</p>
+                    <p data-i18n="about.text1">I am committed to enhancing well-being through tailored sessions that honor the unique journey of each individual. My approach combines traditional yoga practices with holistic healing modalities to create transformative experiences.</p>
+                    <p data-i18n="about.text2">Whether you're beginning your yoga journey or deepening your practice, I'm here to guide you with compassion, expertise, and dedication.</p>
                 </div>
             </div>
         </div>
@@ -75,29 +85,29 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Services</h2>
+                <h2 data-i18n="services.title">Services</h2>
                 <div class="divider"></div>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🧘‍♀️</div>
-                    <h3>Hatha Yoga</h3>
-                    <p>Traditional practice focusing on physical postures and breathing techniques for balance and strength.</p>
+                    <h3 data-i18n="services.hatha.title">Hatha Yoga</h3>
+                    <p data-i18n="services.hatha.desc">Traditional practice focusing on physical postures and breathing techniques for balance and strength.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🌊</div>
-                    <h3>Vinyasa Flow</h3>
-                    <p>Dynamic sequences that synchronize breath with movement for a fluid, meditative practice.</p>
+                    <h3 data-i18n="services.vinyasa.title">Vinyasa Flow</h3>
+                    <p data-i18n="services.vinyasa.desc">Dynamic sequences that synchronize breath with movement for a fluid, meditative practice.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🍫</div>
-                    <h3>Cacao Ceremonies</h3>
-                    <p>Sacred rituals combining ceremonial cacao with meditation and intention setting.</p>
+                    <h3 data-i18n="services.cacao.title">Cacao Ceremonies</h3>
+                    <p data-i18n="services.cacao.desc">Sacred rituals combining ceremonial cacao with meditation and intention setting.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔔</div>
-                    <h3>Sound Healing</h3>
-                    <p>Therapeutic sessions using sound vibrations to promote deep relaxation and healing.</p>
+                    <h3 data-i18n="services.sound.title">Sound Healing</h3>
+                    <p data-i18n="services.sound.desc">Therapeutic sessions using sound vibrations to promote deep relaxation and healing.</p>
                 </div>
             </div>
         </div>
@@ -107,9 +117,9 @@
     <section id="gallery" class="gallery">
         <div class="container">
             <div class="section-header">
-                <h2>Journey Through Moments</h2>
+                <h2 data-i18n="gallery.title">Journey Through Moments</h2>
                 <div class="divider"></div>
-                <p class="section-description">Experience the magic of mindful practice and sacred ceremonies</p>
+                <p class="section-description" data-i18n="gallery.description">Experience the magic of mindful practice and sacred ceremonies</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
@@ -225,7 +235,7 @@
     <section id="experience" class="experience">
         <div class="container">
             <div class="section-header">
-                <h2>Experience & Certifications</h2>
+                <h2 data-i18n="experience.title">Experience & Certifications</h2>
                 <div class="divider"></div>
             </div>
             
@@ -251,7 +261,7 @@
             </div>
 
             <div class="certifications">
-                <h3 class="cert-title">Certifications</h3>
+                <h3 class="cert-title" data-i18n="experience.certifications">Certifications</h3>
                 <div class="cert-grid">
                     <div class="cert-card">
                         <h4>Yoga Alliance Certified Yoga Trainer</h4>
@@ -282,30 +292,30 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
+                <h2 data-i18n="contact.title">Get In Touch</h2>
                 <div class="divider"></div>
             </div>
             <div class="contact-content">
-                <p class="contact-intro">Ready to begin your wellness journey? I'd love to hear from you.</p>
+                <p class="contact-intro" data-i18n="contact.intro">Ready to begin your wellness journey? I'd love to hear from you.</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">📱</div>
                         <div class="contact-details">
-                            <h4>Phone</h4>
+                            <h4 data-i18n="contact.phone">Phone</h4>
                             <a href="tel:0588919907">058 891 9907</a>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">✉️</div>
                         <div class="contact-details">
-                            <h4>Email</h4>
+                            <h4 data-i18n="contact.email">Email</h4>
                             <a href="mailto:kniazevamaria2603@gmail.com">kniazevamaria2603@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">📸</div>
                         <div class="contact-details">
-                            <h4>Instagram</h4>
+                            <h4 data-i18n="contact.instagram">Instagram</h4>
                             <a href="https://instagram.com/kniazevamaria.cacao" target="_blank">@kniazevamaria.cacao</a>
                         </div>
                     </div>
@@ -330,6 +340,7 @@
         </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -147,6 +147,52 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 20px;
+    gap: 2rem;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.language-selector {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 2px solid rgba(123, 44, 191, 0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+.lang-btn:hover {
+    border-color: var(--secondary-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(199, 125, 255, 0.4);
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--gold) 100%);
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    transform: scale(1.15);
+}
+
+.flag-icon {
+    display: block;
+    line-height: 1;
 }
 
 .nav-brand {
@@ -1149,6 +1195,16 @@ section {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    .language-selector {
+        order: -1;
+    }
+
+    .lang-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
     }
 
     .hero-title {
